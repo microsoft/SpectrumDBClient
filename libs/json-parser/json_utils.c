@@ -166,7 +166,7 @@ static json_value* add_item_to_object(json_value *parent, const char *item_name)
     // The memory allocation scheme of json_parse_ex is "optimized" so that
     // the object_entries array and the entry names are allocated in the
     // same block. As a result, the free we do below will free the object entry
-    // names. Annoying. So, we need to allocate a new single block of memory
+    // names. So, we need to allocate a new single block of memory
     // big enough for:
     //   * Our new array of object entries (one bigger than the current
     //     array).
@@ -182,8 +182,7 @@ static json_value* add_item_to_object(json_value *parent, const char *item_name)
     total_names_length += strlen(item_name) + 1;
 
     // Now we need to allocate a block of memory, where different parts of it
-    // have different types. Wankers. If I'd been in a bad mood, I'd have
-    // changed all the variable names to things like uc_b1.
+    // have different types.
     size_t num_bytes_needed_by_new_object_entries_array = sizeof(json_object_entry) * (parent->u.object.length + 1);
     void *stupid_polymorphic_block = malloc(total_names_length + num_bytes_needed_by_new_object_entries_array);
 

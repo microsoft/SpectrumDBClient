@@ -293,7 +293,7 @@ static int32_t make_listener_tcp_socket(uint16_t port)
 	}
 
     // Make the socket non-blocking to avoid a race-condition that could cause 
-    // us to hang. Just google "select accept race condition" for more info.
+    // us to stop responding. Just google "select accept race condition" for more info.
 	int32_t flags = fcntl(sock, F_GETFL, 0);
 	if (flags < 0)
 	{
@@ -339,7 +339,7 @@ static int32_t make_listener_sctp_socket(uint16_t port)
 	}
 
 	// Make the socket non-blocking to avoid a race-condition that could cause 
-	// us to hang. Just google "select accept race condition" for more info.
+	// us to stop responding. Just google "select accept race condition" for more info.
 	int32_t flags = fcntl(sock, F_GETFL, 0);
 	if (flags < 0)
 	{

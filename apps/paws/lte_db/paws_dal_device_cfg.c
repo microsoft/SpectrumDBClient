@@ -354,7 +354,7 @@ static bool limit_and_validate_cfg(void* logger, device_cfg_params_t* dst, int m
 		dst->limited = true;
 	}
 
-	// fail safe - just to double check there are no crazy values
+	// fail safe - just to double check the valiues are consistent
 	if (!(validate_lte_cfg(13, dst->bandwidth, dst->ref_sig_power, dst->earfcndl, dst->earfcnul, dst->pmax)))
 	{
 		char dbg[200];

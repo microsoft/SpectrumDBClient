@@ -77,7 +77,7 @@ typedef struct _json_value
         struct
         {
             unsigned int length;
-            json_object_entry * values; // While in the 1st pass, the parser uses this value to store the number of bytes needed to store all the names that will be referenced in the json_object_entries. Crazy!
+            json_object_entry * values; // While in the 1st pass, the parser uses this value to store the number of bytes needed to store all the names that will be referenced in the json_object_entries. 
         } object;
 
         struct
