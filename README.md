@@ -11,7 +11,7 @@ This is an application which controls access to the MME itself.   It is used to 
 It uses the information from PAWS to determine whether it needs to block the data transfer.  However it can also be configured to ignore the PAWS status.
 The block diagrams below shows the general topologies.
  
-![](https://repos.opensource.microsoft.com/Microsoft/repos/SpectrumDBClient/topology.jpg)
+![](https://github.com/Microsoft/SpectrumDBClient/blob/master/topology.JPG)
 
 # TVWSDB
 As discussed, PAWS needs to communicate with a TVWSDB.  The user will need to register all clients with this, get security tokens etc, and configure this in the SQL databases mentioned below.
